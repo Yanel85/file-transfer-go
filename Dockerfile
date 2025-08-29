@@ -70,8 +70,3 @@ USER appuser
 
 EXPOSE 8080
 CMD ["./server"]
-
-# ==============================================
-# 构建命令（示例）:
-# docker buildx build --platform linux/amd64,linux/arm64 -t your-image:tag .
-# ==============================================
