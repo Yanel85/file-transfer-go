@@ -1,0 +1,95 @@
+name: 🐛 Bug 报告
+description: 报告一个错误或问题
+title: "[Bug] "
+labels: ["bug", "需要调查"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您花时间填写错误报告！请详细描述遇到的问题，这将帮助我们更快地定位和解决问题。
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: 问题描述
+      description: 请详细描述您遇到的问题
+      placeholder: |
+        例如：在文件传输过程中，当传输大文件时连接会意外断开...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment-environment
+    attributes:
+      label: 部署环境
+      description: 您使用的是什么部署方式？
+      options:
+        - 二进制部署（下载发布的可执行文件）
+        - 自行构建（从源码编译）
+        - Docker 部署
+        - 官方演示站
+        - 其他（请在详细信息中说明）
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment-details
+    attributes:
+      label: 环境详细信息
+      description: 请提供环境相关信息
+      placeholder: |
+        - 操作系统：Linux Ubuntu 20.04 / Windows 10 / macOS 12.x
+        - 浏览器：Chrome 120.x / Firefox 121.x / Safari 17.x
+        - 网络环境：局域网 / 公网 / NAT环境
+        - 设备类型：PC / 移动设备
+        - 其他相关信息...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 复现步骤
+      description: 请描述如何复现这个问题
+      placeholder: |
+        1. 打开应用
+        2. 点击 '文件传输'
+        3. 选择一个大文件 (>100MB)
+        4. 点击发送
+        5. 观察到连接断开...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: |
+        请提供相关的错误日志、控制台输出或服务器日志
+        提示：您可以在浏览器开发者工具的控制台中查看客户端日志
+      render: text
+      placeholder: |
+        [2024-01-15 10:30:45] [ERROR] WebRTC连接失败: ICE连接超时
+        [2024-01-15 10:30:45] [INFO] 尝试重新连接...
+        
+        或者粘贴浏览器控制台的错误信息...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图或录屏
+      description: |
+        如果适用，请添加截图或录屏来帮助解释您的问题
+        您可以直接拖拽图片到这个文本框中
+      placeholder: 拖拽图片文件到这里，或者粘贴图片链接
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 其他信息
+      description: 任何其他可能有助于解决问题的信息
+      placeholder: |
+        - 问题发生的频率：每次 / 偶尔 / 特定条件下
+        - 是否在多个设备上都出现
+        - 最近是否有环境变化
+        - 其他可能相关的信息...
